@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhyadhar Battula | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 90px 10%;
+        }
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h3 {
+            color: #cbd5e1;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #7dd3fc;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 35px;
+            color: #38bdf8;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .education {
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px;
+            color: #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav div {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Vidhyadhar</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="home">
+    <div class="hero">
+        <h1>Hi, I'm <span>Vidhyadhar</span></h1>
+        <h3>B.Tech Student | AI & Machine Learning Enthusiast</h3>
+        <p>
+            Welcome to my portfolio. I am passionate about technology,
+            software development, Artificial Intelligence and Machine Learning.
+        </p>
+        <a href="#projects" class="btn">View My Projects</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+        <p>
+            I am a B.Tech student interested in software development,
+            Artificial Intelligence and Machine Learning. I enjoy learning
+            new technologies and building practical projects that solve
+            real-world problems.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">Java</div>
+        <div class="skill">SQL</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Artificial Intelligence</div>
+        <div class="skill">Machine Learning</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>AI-Based EV Emergency Assistance</h3>
+            <p>
+                An intelligent emergency assistance system for electric
+                vehicles that detects accidents and critical vehicle
+                conditions and provides emergency alerts and location
+                information.
+            </p>
+            <p><strong>Technologies:</strong> AI, Sensors, GPS, Firebase, Flutter</p>
+        </div>
+
+        <div class="project">
+            <h3>AI & Machine Learning Projects</h3>
+            <p>
+                Developed academic projects using Python and machine
+                learning techniques to analyze data and solve practical
+                problems.
+            </p>
+            <p><strong>Technologies:</strong> Python, Machine Learning, TensorFlow</p>
+        </div>
+
+        <div class="project">
+            <h3>Web Development Projects</h3>
+            <p>
+                Created web-based applications using HTML, CSS and
+                JavaScript with a focus on simple and user-friendly designs.
+            </p>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education">
+        <h3>Bachelor of Technology (B.Tech)</h3>
+        <p>Currently pursuing B.Tech</p>
+        <p>Computer Science / Engineering</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact">
+        <p>📧 Email: YOUR_EMAIL@gmail.com</p>
+        <p>💼 LinkedIn: Add your LinkedIn profile</p>
+        <p>💻 GitHub: github.com/vidhyadhar5493</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Vidhyadhar Battula. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
