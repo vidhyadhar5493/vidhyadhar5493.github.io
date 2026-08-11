@@ -1,298 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidhyadhar Battula | Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BATTULA VIDHYADHAR | AI & Data Science Portfolio</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        body {
-            background: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#07111f;
+    color:#fff;
+    line-height:1.6;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 18px 8%;
-            background: #0f172a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #334155;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 8%;
+    background:rgba(7,17,31,0.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    border-bottom:1px solid #1e3a5f;
+}
 
-        nav h2 {
-            color: #38bdf8;
-        }
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#38bdf8;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
 
-        section {
-            padding: 90px 10%;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
+section{
+    padding:100px 9%;
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(135deg,#07111f,#0b2440);
+}
 
-        .hero h1 span {
-            color: #38bdf8;
-        }
+.hero-content{
+    max-width:850px;
+}
 
-        .hero h3 {
-            color: #cbd5e1;
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
+.tag{
+    color:#38bdf8;
+    font-size:18px;
+    margin-bottom:15px;
+}
 
-        .hero p {
-            max-width: 650px;
-            color: #94a3b8;
-            margin-bottom: 25px;
-        }
+.hero h1{
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #38bdf8;
-            color: #0f172a;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+.hero h1 span{
+    color:#38bdf8;
+}
 
-        .btn:hover {
-            background: #7dd3fc;
-        }
+.hero h2{
+    font-size:27px;
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
 
-        h2.section-title {
-            text-align: center;
-            font-size: 35px;
-            color: #38bdf8;
-            margin-bottom: 40px;
-        }
+.hero p{
+    color:#94a3b8;
+    font-size:17px;
+    max-width:700px;
+    margin-bottom:30px;
+}
 
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #cbd5e1;
-        }
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    margin-right:10px;
+    margin-bottom:10px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    background:#38bdf8;
+    color:#07111f;
+    transition:.3s;
+}
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
+.btn:hover{
+    transform:translateY(-3px);
+    background:#7dd3fc;
+}
 
-        .skill {
-            background: #1e293b;
-            padding: 15px 25px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-        }
+.btn-outline{
+    background:transparent;
+    color:#38bdf8;
+    border:1px solid #38bdf8;
+}
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+.btn-outline:hover{
+    background:#38bdf8;
+    color:#07111f;
+}
 
-        .project {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #334155;
-        }
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
 
-        .project h3 {
-            color: #38bdf8;
-            margin-bottom: 10px;
-        }
+.about-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    background:#0d1b2e;
+    padding:35px;
+    border-radius:15px;
+    border:1px solid #1e3a5f;
+}
 
-        .project p {
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
+.about-box p{
+    color:#cbd5e1;
+    font-size:17px;
+}
 
-        .education {
-            text-align: center;
-            color: #cbd5e1;
-        }
+.info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:30px;
+}
 
-        .contact {
-            text-align: center;
-        }
+.info div{
+    background:#10243b;
+    padding:15px 25px;
+    border-radius:8px;
+    color:#cbd5e1;
+}
 
-        .contact p {
-            margin: 10px;
-            color: #cbd5e1;
-        }
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #020617;
-            color: #94a3b8;
-        }
+.skill{
+    padding:14px 22px;
+    background:#0d1b2e;
+    border:1px solid #1e3a5f;
+    border-radius:8px;
+    color:#e2e8f0;
+    transition:.3s;
+}
 
-        @media (max-width: 700px) {
-            nav {
-                padding: 15px 5%;
-            }
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:#38bdf8;
+    color:#38bdf8;
+}
 
-            nav div {
-                display: none;
-            }
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
-        }
-    </style>
+.card{
+    background:#0d1b2e;
+    border:1px solid #1e3a5f;
+    border-radius:15px;
+    padding:28px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+.card-number{
+    color:#38bdf8;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.card h3{
+    margin:12px 0;
+    font-size:21px;
+}
+
+.card p{
+    color:#94a3b8;
+    margin-bottom:18px;
+}
+
+.tech{
+    color:#38bdf8;
+    font-size:14px;
+}
+
+.education{
+    max-width:800px;
+    margin:auto;
+    background:#0d1b2e;
+    border-left:4px solid #38bdf8;
+    padding:30px;
+    border-radius:10px;
+}
+
+.education h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.education p{
+    color:#94a3b8;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#cbd5e1;
+    margin:10px;
+}
+
+.contact-links{
+    margin-top:25px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#030914;
+    color:#64748b;
+    border-top:1px solid #1e3a5f;
+}
+
+@media(max-width:750px){
+    nav{
+        padding:15px 5%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .title{
+        font-size:32px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-    <h2>Vidhyadhar</h2>
-    <div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <div class="logo">Vidhyadhar</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<section id="home">
-    <div class="hero">
-        <h1>Hi, I'm <span>Vidhyadhar</span></h1>
-        <h3>B.Tech Student | AI & Machine Learning Enthusiast</h3>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="tag">B.Tech AI & Data Science Student</div>
+
+        <h1>
+            Hi, I'm <span>BATTULA VIDHYADHAR</span>
+        </h1>
+
+        <h2>
+            Artificial Intelligence & Data Science Enthusiast
+        </h2>
+
         <p>
-            Welcome to my portfolio. I am passionate about technology,
-            software development, Artificial Intelligence and Machine Learning.
+            I am a B.Tech student passionate about Artificial Intelligence,
+            Data Science, Machine Learning, IoT and software development.
+            I enjoy building practical technology solutions for real-world problems.
         </p>
+
         <a href="#projects" class="btn">View My Projects</a>
+
+        <a href="mailto:vidhyadharbattula5@gmail.com"
+           class="btn btn-outline">
+           Contact Me
+        </a>
+
     </div>
 </section>
 
+
+<!-- ABOUT -->
 <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-box">
+
         <p>
-            I am a B.Tech student interested in software development,
-            Artificial Intelligence and Machine Learning. I enjoy learning
-            new technologies and building practical projects that solve
-            real-world problems.
+            I am BATTULA VIDHYADHAR, currently pursuing a Bachelor of
+            Technology in Artificial Intelligence and Data Science at
+            QIS College of Engineering and Technology, with an expected
+            graduation year of 2027.
         </p>
+
+        <p style="margin-top:15px;">
+            I am interested in Artificial Intelligence, Machine Learning,
+            Data Science, IoT and software development. I enjoy learning
+            new technologies and developing innovative projects that can
+            solve practical problems.
+        </p>
+
+        <div class="info">
+            <div>🎓 B.Tech AI & DS</div>
+            <div>📅 Graduation: 2027</div>
+            <div>📍 QIS College of Engineering & Technology</div>
+        </div>
+
     </div>
+
 </section>
 
+
+<!-- SKILLS -->
 <section id="skills">
-    <h2 class="section-title">My Skills</h2>
+
+    <h2 class="title">Technical Skills</h2>
+
     <div class="skills">
+
         <div class="skill">Python</div>
         <div class="skill">Java</div>
+        <div class="skill">C++</div>
         <div class="skill">SQL</div>
         <div class="skill">HTML</div>
         <div class="skill">CSS</div>
         <div class="skill">JavaScript</div>
-        <div class="skill">Artificial Intelligence</div>
         <div class="skill">Machine Learning</div>
+        <div class="skill">Artificial Intelligence</div>
+        <div class="skill">Data Science</div>
+        <div class="skill">TensorFlow</div>
         <div class="skill">Git & GitHub</div>
+        <div class="skill">IoT</div>
+        <div class="skill">Firebase</div>
+
     </div>
+
 </section>
 
+
+<!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">My Projects</h2>
+
+    <h2 class="title">Featured Projects</h2>
 
     <div class="projects">
 
-        <div class="project">
-            <h3>AI-Based EV Emergency Assistance</h3>
+        <div class="card">
+            <div class="card-number">PROJECT 01</div>
+
+            <h3>
+                AI-Based EV Emergency Assistance & Intelligent Rescue System
+            </h3>
+
             <p>
-                An intelligent emergency assistance system for electric
-                vehicles that detects accidents and critical vehicle
-                conditions and provides emergency alerts and location
-                information.
+                A smart safety system designed to provide rapid assistance
+                during electric vehicle emergencies by monitoring vehicle
+                conditions and providing emergency information and location
+                details.
             </p>
-            <p><strong>Technologies:</strong> AI, Sensors, GPS, Firebase, Flutter</p>
+
+            <div class="tech">
+                AI • Sensors • GPS • Firebase • Flutter
+            </div>
         </div>
 
-        <div class="project">
-            <h3>AI & Machine Learning Projects</h3>
+
+        <div class="card">
+            <div class="card-number">PROJECT 02</div>
+
+            <h3>Waste-to-Energy Project</h3>
+
             <p>
-                Developed academic projects using Python and machine
-                learning techniques to analyze data and solve practical
-                problems.
+                An innovative project focused on converting waste into
+                useful energy while promoting sustainable waste management
+                and reducing environmental impact.
             </p>
-            <p><strong>Technologies:</strong> Python, Machine Learning, TensorFlow</p>
+
+            <div class="tech">
+                Waste Management • Energy • Sustainability
+            </div>
         </div>
 
-        <div class="project">
-            <h3>Web Development Projects</h3>
+
+        <div class="card">
+            <div class="card-number">PROJECT 03</div>
+
+            <h3>IoT-Based Smart Traffic Management System</h3>
+
             <p>
-                Created web-based applications using HTML, CSS and
-                JavaScript with a focus on simple and user-friendly designs.
+                An IoT-based smart traffic solution designed to monitor
+                traffic conditions and support efficient traffic management
+                using connected devices and sensors.
             </p>
-            <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+
+            <div class="tech">
+                IoT • Sensors • Arduino • Smart Traffic
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-number">PROJECT 04</div>
+
+            <h3>Automatic Wheelchair with Voice Control</h3>
+
+            <p>
+                A smart wheelchair concept that uses voice commands to
+                assist users in controlling wheelchair movement, improving
+                accessibility and independent mobility.
+            </p>
+
+            <div class="tech">
+                Voice Control • IoT • Embedded Systems
+            </div>
         </div>
 
     </div>
+
 </section>
 
+
+<!-- EDUCATION -->
 <section id="education">
-    <h2 class="section-title">Education</h2>
+
+    <h2 class="title">Education</h2>
+
     <div class="education">
-        <h3>Bachelor of Technology (B.Tech)</h3>
-        <p>Currently pursuing B.Tech</p>
-        <p>Computer Science / Engineering</p>
+
+        <h3>
+            Bachelor of Technology – Artificial Intelligence & Data Science
+        </h3>
+
+        <p>
+            QIS College of Engineering and Technology
+        </p>
+
+        <p>
+            Expected Graduation: 2027
+        </p>
+
     </div>
+
 </section>
 
+
+<!-- CONTACT -->
 <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
+
+    <h2 class="title">Let's Connect</h2>
+
     <div class="contact">
-        <p>📧 Email: YOUR_EMAIL@gmail.com</p>
-        <p>💼 LinkedIn: Add your LinkedIn profile</p>
-        <p>💻 GitHub: github.com/vidhyadhar5493</p>
+
+        <p>
+            📧 vidhyadharbattula5@gmail.com
+        </p>
+
+        <div class="contact-links">
+
+            <a
+                href="mailto:vidhyadharbattula5@gmail.com"
+                class="btn">
+                Email Me
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/vidhyadhar-battula-40a018376"
+                target="_blank"
+                class="btn btn-outline">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/vidhyadhar5493"
+                target="_blank"
+                class="btn btn-outline">
+                GitHub
+            </a>
+
+        </div>
+
     </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Vidhyadhar Battula. All Rights Reserved.</p>
+
+    <p>
+        © 2026 BATTULA VIDHYADHAR | AI & Data Science
+    </p>
+
 </footer>
 
 </body>
