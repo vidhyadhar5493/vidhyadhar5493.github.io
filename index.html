@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BATTULA VIDHYADHAR | AI & Data Science Portfolio</title>
 
 <style>
@@ -30,13 +29,11 @@ body{
     color:var(--text);
     line-height:1.7;
     overflow-x:hidden;
-
     background-image:
         linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
         linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
         radial-gradient(circle at 20% 20%,rgba(168,85,247,.18),transparent 28%),
         radial-gradient(circle at 80% 45%,rgba(34,211,238,.10),transparent 25%);
-
     background-size:50px 50px,50px 50px,auto,auto;
 }
 
@@ -72,24 +69,18 @@ body:after{
     }
 }
 
-/* NAVIGATION */
-
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:1000;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:18px 7%;
-
     background:rgba(7,8,18,.78);
     backdrop-filter:blur(16px);
-
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
@@ -118,14 +109,10 @@ nav a:hover{
     text-shadow:0 0 15px var(--cyan);
 }
 
-/* SECTIONS */
-
 section{
     padding:105px 8%;
     min-height:80vh;
 }
-
-/* HERO */
 
 .hero{
     min-height:100vh;
@@ -227,8 +214,6 @@ section{
     color:#77758b;
 }
 
-/* PROFILE */
-
 .profile-wrap{
     text-align:center;
 }
@@ -238,35 +223,27 @@ section{
     height:280px;
     object-fit:cover;
     border-radius:50%;
-
     border:5px solid #22d3ee;
-
     box-shadow:
         0 0 20px #22d3ee,
         0 0 65px rgba(168,85,247,.65);
-
     animation:photoGlow 3s ease-in-out infinite;
 }
 
 @keyframes photoGlow{
     50%{
         transform:translateY(-8px);
-
         box-shadow:
             0 0 35px #22d3ee,
             0 0 90px rgba(168,85,247,.75);
     }
 }
 
-/* TITLES */
-
 .title{
     font-size:clamp(40px,6vw,70px);
     letter-spacing:-3px;
     margin-bottom:40px;
 }
-
-/* ABOUT */
 
 .about-grid{
     display:grid;
@@ -288,12 +265,9 @@ section{
         var(--card),
         var(--card2)
     );
-
     border:1px solid rgba(180,170,255,.25);
     border-radius:20px;
-
     box-shadow:0 20px 60px rgba(0,0,0,.25);
-
     backdrop-filter:blur(12px);
 }
 
@@ -328,13 +302,9 @@ section{
 .skill{
     padding:18px;
     text-align:center;
-
     border-radius:12px;
-
     background:var(--card);
-
     border:1px solid rgba(255,255,255,.12);
-
     transition:.35s;
 }
 
@@ -356,17 +326,11 @@ section{
 .timeline:before{
     content:"";
     position:absolute;
-
     left:18px;
     top:0;
     bottom:0;
-
     width:2px;
-
-    background:linear-gradient(
-        #a855f7,
-        #22d3ee
-    );
+    background:linear-gradient(#a855f7,#22d3ee);
 }
 
 .experience{
@@ -377,17 +341,12 @@ section{
 
 .dot{
     position:absolute;
-
     left:8px;
     top:20px;
-
     width:22px;
     height:22px;
-
     border-radius:50%;
-
     background:#a855f7;
-
     box-shadow:0 0 20px #a855f7;
 }
 
@@ -444,19 +403,11 @@ section{
 .cert-logo{
     width:48px;
     height:48px;
-
     border-radius:13px;
-
     display:grid;
     place-items:center;
-
     font-size:22px;
-
-    background:linear-gradient(
-        135deg,
-        #8b5cf6,
-        #22d3ee
-    );
+    background:linear-gradient(135deg,#8b5cf6,#22d3ee);
 }
 
 .tag{
@@ -503,14 +454,10 @@ section{
 .edu-icon{
     width:70px;
     height:70px;
-
     border-radius:18px;
-
     background:#8b5cf6;
-
     display:grid;
     place-items:center;
-
     font-size:32px;
     flex:none;
 }
@@ -574,8 +521,6 @@ section{
     letter-spacing:2px;
 }
 
-/* FOOTER */
-
 footer{
     text-align:center;
     padding:35px;
@@ -583,12 +528,11 @@ footer{
     border-top:1px solid rgba(255,255,255,.08);
 }
 
-/* SCROLL ANIMATION */
+/* ANIMATION */
 
 .reveal{
     opacity:0;
     transform:translateY(35px);
-
     transition:
         opacity .8s ease,
         transform .8s ease;
@@ -757,7 +701,6 @@ Get In Touch
 
 </div>
 
-
 <div class="profile-wrap reveal delay2">
 
 <img
@@ -809,7 +752,6 @@ skills through projects, internships and certifications.
 
 </div>
 
-
 <div class="info-card reveal delay2">
 
 <div class="info-row">
@@ -858,45 +800,18 @@ Technical Skills
 
 <div class="skills">
 
-<div class="skill reveal">
-C
-</div>
+<div class="skill reveal">C</div>
+<div class="skill reveal delay1">Python</div>
+<div class="skill reveal delay2">Java</div>
+<div class="skill reveal delay3">SQL</div>
 
-<div class="skill reveal delay1">
-Python
-</div>
+<div class="skill reveal">HTML</div>
+<div class="skill reveal delay1">CSS</div>
+<div class="skill reveal delay2">Git</div>
+<div class="skill reveal delay3">GitHub</div>
 
-<div class="skill reveal delay2">
-Java
-</div>
-
-<div class="skill reveal delay3">
-SQL
-</div>
-
-<div class="skill reveal">
-HTML
-</div>
-
-<div class="skill reveal delay1">
-CSS
-</div>
-
-<div class="skill reveal delay2">
-Git
-</div>
-
-<div class="skill reveal delay3">
-GitHub
-</div>
-
-<div class="skill reveal">
-NumPy
-</div>
-
-<div class="skill reveal delay1">
-Pandas
-</div>
+<div class="skill reveal">NumPy</div>
+<div class="skill reveal delay1">Pandas</div>
 
 </div>
 
@@ -918,7 +833,7 @@ Experience
 <div class="timeline">
 
 
-<!-- INTERNSHIP 1 -->
+<!-- JAVA FULL STACK -->
 
 <div class="experience reveal">
 
@@ -927,38 +842,21 @@ Experience
 <div class="card">
 
 <h3>
-Cloud Engineering Virtual Intern — EduSkills
+Java Full Stack Development Internship
 </h3>
 
 <div class="meta">
-Virtual Internship · AICTE · Google Cloud Curriculum · Apr–Jun 2025 · 10 Weeks
+Internship / Training
 </div>
 
-<ul>
+<p>
+Completed a Java Full Stack Development internship and gained
+practical exposure to Java-based application development and
+full-stack development concepts.
+</p>
 
-<li>
-Completed a 10-week Cloud Engineering virtual internship
-under the AICTE–EduSkills programme.
-</li>
-
-<li>
-Gained practical exposure to cloud engineering concepts
-and Google Cloud technologies.
-</li>
-
-<li>
-Completed the internship through the National Internship Portal.
-</li>
-
-</ul>
-
-<a
-class="btn"
-href="certificates/cloud-engineering-eduskills.pdf"
-target="_blank">
-
+<a class="btn" href="#certificates">
 View Certificate ↗
-
 </a>
 
 </div>
@@ -966,7 +864,7 @@ View Certificate ↗
 </div>
 
 
-<!-- INTERNSHIP 2 -->
+<!-- ANDROID DEVELOPER -->
 
 <div class="experience reveal delay2">
 
@@ -975,37 +873,21 @@ View Certificate ↗
 <div class="card">
 
 <h3>
-App Development Intern — TechieHelp
+Android Developer Virtual Internship
 </h3>
 
 <div class="meta">
-Internship · TechieHelp India · Nov–Dec 2025 · 1 Month
+Virtual Internship
 </div>
 
-<ul>
+<p>
+Completed an Android Developer Virtual Internship and gained
+practical exposure to Android application development and
+mobile application technologies.
+</p>
 
-<li>
-Completed an App Development internship at TechieHelp.
-</li>
-
-<li>
-Gained practical exposure to mobile and application
-development.
-</li>
-
-<li>
-Completed the internship through the National Internship Portal.
-</li>
-
-</ul>
-
-<a
-class="btn"
-href="certificates/app-development-techiehelp.pdf"
-target="_blank">
-
+<a class="btn" href="#certificates">
 View Certificate ↗
-
 </a>
 
 </div>
@@ -1032,14 +914,14 @@ Certifications
 <div class="cert-grid">
 
 
-<!-- CLOUD ENGINEERING -->
+<!-- JAVA FULL STACK -->
 
 <div class="card cert reveal">
 
 <div class="cert-top">
 
 <div class="cert-logo">
-☁️
+☕
 </div>
 
 <span class="tag">
@@ -1049,29 +931,21 @@ INTERNSHIP
 </div>
 
 <h3>
-Cloud Engineering Virtual Internship
+Java Full Stack Development
 </h3>
 
 <div class="issuer">
-EduSkills Foundation · Google Cloud
+Java Full Stack Development
 </div>
 
 <small>
-AICTE · National Internship Portal
+Internship / Training Certificate
 </small>
-
-<a
-href="certificates/cloud-engineering-eduskills.pdf"
-target="_blank">
-
-View Certificate ↗
-
-</a>
 
 </div>
 
 
-<!-- APP DEVELOPMENT -->
+<!-- ANDROID -->
 
 <div class="card cert reveal delay1">
 
@@ -1088,70 +962,23 @@ INTERNSHIP
 </div>
 
 <h3>
-App Development Internship
+Android Developer Virtual Internship
 </h3>
 
 <div class="issuer">
-TechieHelp
+Android Development
 </div>
 
 <small>
-MSME · ISO 9001 · National Internship Portal
+Virtual Internship Certificate
 </small>
-
-<a
-href="certificates/app-development-techiehelp.pdf"
-target="_blank">
-
-View Certificate ↗
-
-</a>
-
-</div>
-
-
-<!-- NPTEL -->
-
-<div class="card cert reveal delay2">
-
-<div class="cert-top">
-
-<div class="cert-logo">
-🎓
-</div>
-
-<span class="tag">
-NPTEL
-</span>
-
-</div>
-
-<h3>
-Advanced Computer Networks
-</h3>
-
-<div class="issuer">
-NPTEL · IIT Indore & IIT Gandhinagar
-</div>
-
-<small>
-Score: 55% · 4 Credits · 12 Weeks
-</small>
-
-<a
-href="certificates/advanced-computer-networks.pdf"
-target="_blank">
-
-View Certificate ↗
-
-</a>
 
 </div>
 
 
 <!-- IBM PYTHON -->
 
-<div class="card cert reveal">
+<div class="card cert reveal delay2">
 
 <div class="cert-top">
 
@@ -1177,20 +1004,12 @@ IBM
 Python / Programming
 </small>
 
-<a
-href="certificates/ibm-python.pdf"
-target="_blank">
-
-View Certificate ↗
-
-</a>
-
 </div>
 
 
 <!-- DELOITTE -->
 
-<div class="card cert reveal delay1">
+<div class="card cert reveal">
 
 <div class="cert-top">
 
@@ -1213,16 +1032,8 @@ Deloitte
 </div>
 
 <small>
-Cybersecurity / Job Simulation
+Cybersecurity Job Simulation
 </small>
-
-<a
-href="certificates/deloitte-cyber.pdf"
-target="_blank">
-
-View Certificate ↗
-
-</a>
 
 </div>
 
@@ -1290,8 +1101,6 @@ Projects
 <div class="project-grid">
 
 
-<!-- PROJECT 1 -->
-
 <div class="card project reveal">
 
 <h3>
@@ -1312,8 +1121,6 @@ AI · IoT · Flutter · Firebase · GPS
 </div>
 
 
-<!-- PROJECT 2 -->
-
 <div class="card project reveal delay1">
 
 <h3>
@@ -1333,8 +1140,6 @@ Waste Management · Energy · Sustainability
 </div>
 
 
-<!-- PROJECT 3 -->
-
 <div class="card project reveal delay2">
 
 <h3>
@@ -1353,8 +1158,6 @@ IoT · Sensors · Arduino · Automation
 
 </div>
 
-
-<!-- PROJECT 4 -->
 
 <div class="card project reveal delay3">
 
@@ -1421,7 +1224,6 @@ Send an Email ↗
 
 <div class="contact-links">
 
-
 <a
 class="card contact-item reveal"
 href="mailto:vidhyadharbattula5@gmail.com">
@@ -1451,17 +1253,16 @@ BATTULA VIDHYADHAR
 
 <a
 class="card contact-item reveal delay2"
-href="https://github.com/vidhyadhar5493"
+href="https://vidhyadhar5493.github.io"
 target="_blank">
 
 <strong>
-GITHUB
+PORTFOLIO
 </strong>
 
-github.com/vidhyadhar5493
+vidhyadhar5493.github.io
 
 </a>
-
 
 </div>
 
@@ -1469,8 +1270,6 @@ github.com/vidhyadhar5493
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1480,8 +1279,6 @@ Designed & Built by
 
 </footer>
 
-
-<!-- ANIMATION SCRIPT -->
 
 <script>
 
