@@ -6,627 +6,125 @@
 <title>BATTULA VIDHYADHAR | AI & Data Science Portfolio</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#070812;
-    --card:rgba(34,39,83,.72);
-    --card2:rgba(50,48,110,.55);
-    --text:#f7f7ff;
-    --muted:#b8b7cc;
-    --purple:#a855f7;
-    --cyan:#22d3ee;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
-    overflow-x:hidden;
-    background-image:
-        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
-        radial-gradient(circle at 20% 20%,rgba(168,85,247,.18),transparent 28%),
-        radial-gradient(circle at 80% 45%,rgba(34,211,238,.10),transparent 25%);
-    background-size:50px 50px,50px 50px,auto,auto;
-}
-
-body:before,
-body:after{
-    content:"";
-    position:fixed;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.16;
-    z-index:-1;
-    animation:float 8s ease-in-out infinite;
-}
-
-body:before{
-    background:#8b5cf6;
-    top:15%;
-    left:-150px;
-}
-
-body:after{
-    background:#06b6d4;
-    right:-150px;
-    bottom:10%;
-    animation-delay:2s;
-}
-
-@keyframes float{
-    50%{
-        transform:translateY(-35px) scale(1.1);
-    }
-}
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 7%;
-    background:rgba(7,8,18,.78);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.logo{
-    font-size:25px;
-    font-weight:800;
-    color:var(--cyan);
-    text-decoration:none;
-}
-
-nav ul{
-    display:flex;
-    gap:28px;
-    list-style:none;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--cyan);
-    text-shadow:0 0 15px var(--cyan);
-}
-
-section{
-    padding:105px 8%;
-    min-height:80vh;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding-top:120px;
-}
-
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.25fr .75fr;
-    gap:50px;
-    align-items:center;
-    width:100%;
-}
-
-.badge,
-.eyebrow{
-    display:inline-block;
-    color:#c084fc;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-size:clamp(48px,8vw,105px);
-    line-height:.95;
-    letter-spacing:-5px;
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:#a855f7;
-    text-shadow:0 0 25px rgba(168,85,247,.5);
-    animation:pulseText 3s ease-in-out infinite;
-}
-
-@keyframes pulseText{
-    50%{
-        text-shadow:0 0 45px rgba(168,85,247,.85);
-    }
-}
-
-.hero h3{
-    color:#c084fc;
-    font-family:monospace;
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    color:var(--muted);
-    max-width:680px;
-    font-size:17px;
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-    margin:30px 0;
-}
-
-.btn{
-    padding:13px 22px;
-    border-radius:10px;
-    text-decoration:none;
-    color:white;
-    border:1px solid rgba(255,255,255,.15);
-    transition:.3s;
-    display:inline-block;
-}
-
-.btn.primary{
-    background:linear-gradient(135deg,#9333ea,#7c3aed);
-    box-shadow:0 0 25px rgba(147,51,234,.35);
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(168,85,247,.25);
-}
-
-.stats{
-    display:flex;
-    gap:55px;
-    margin-top:30px;
-}
-
-.stat strong{
-    display:block;
-    color:#c084fc;
-    font-size:31px;
-}
-
-.stat small{
-    color:#77758b;
-}
-
-.profile-wrap{
-    text-align:center;
-}
-
-.profile-photo{
-    width:280px;
-    height:280px;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid #22d3ee;
-    box-shadow:
-        0 0 20px #22d3ee,
-        0 0 65px rgba(168,85,247,.65);
-    animation:photoGlow 3s ease-in-out infinite;
-}
-
-@keyframes photoGlow{
-    50%{
-        transform:translateY(-8px);
-        box-shadow:
-            0 0 35px #22d3ee,
-            0 0 90px rgba(168,85,247,.75);
-    }
-}
-
-.title{
-    font-size:clamp(40px,6vw,70px);
-    letter-spacing:-3px;
-    margin-bottom:40px;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:45px;
-    align-items:center;
-}
-
-.about-text p{
-    color:var(--muted);
-    font-size:17px;
-    margin-bottom:22px;
-}
-
-.info-card,
-.card{
-    background:linear-gradient(
-        135deg,
-        var(--card),
-        var(--card2)
-    );
-    border:1px solid rgba(180,170,255,.25);
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-    backdrop-filter:blur(12px);
-}
-
-.info-card{
-    padding:25px;
-}
-
-.info-row{
-    padding:16px 5px;
-    border-bottom:1px solid rgba(255,255,255,.12);
-    display:flex;
-    gap:14px;
-}
-
-.info-row:last-child{
-    border-bottom:0;
-}
-
-.icon{
-    font-size:22px;
-    width:35px;
-}
-
-/* SKILLS */
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.skill{
-    padding:18px;
-    text-align:center;
-    border-radius:12px;
-    background:var(--card);
-    border:1px solid rgba(255,255,255,.12);
-    transition:.35s;
-}
-
-.skill:hover{
-    transform:translateY(-7px);
-    border-color:#a855f7;
-    box-shadow:0 0 25px rgba(168,85,247,.25);
-    color:#fff;
-}
-
-/* EXPERIENCE */
-
-.timeline{
-    position:relative;
-    max-width:1050px;
-    margin:auto;
-}
-
-.timeline:before{
-    content:"";
-    position:absolute;
-    left:18px;
-    top:0;
-    bottom:0;
-    width:2px;
-    background:linear-gradient(#a855f7,#22d3ee);
-}
-
-.experience{
-    position:relative;
-    padding-left:65px;
-    margin-bottom:35px;
-}
-
-.dot{
-    position:absolute;
-    left:8px;
-    top:20px;
-    width:22px;
-    height:22px;
-    border-radius:50%;
-    background:#a855f7;
-    box-shadow:0 0 20px #a855f7;
-}
-
-.card{
-    padding:28px;
-}
-
-.card h3{
-    font-size:23px;
-}
-
-.meta{
-    color:#c084fc;
-    font-family:monospace;
-    margin:6px 0 18px;
-}
-
-.card p,
-.card li{
-    color:var(--muted);
-}
-
-.card ul{
-    padding-left:20px;
-}
-
-/* CERTIFICATES */
-
-.cert-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.cert{
-    position:relative;
-    min-height:245px;
-    transition:.4s;
-}
-
-.cert:hover{
-    transform:translateY(-8px);
-    border-color:#a855f7;
-    box-shadow:0 0 30px rgba(168,85,247,.2);
-}
-
-.cert-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-}
-
-.cert-logo{
-    width:48px;
-    height:48px;
-    border-radius:13px;
-    display:grid;
-    place-items:center;
-    font-size:22px;
-    background:linear-gradient(135deg,#8b5cf6,#22d3ee);
-}
-
-.tag{
-    font-size:11px;
-    color:#e9d5ff;
-    background:rgba(168,85,247,.2);
-    padding:5px 10px;
-    border-radius:20px;
-}
-
-.cert h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.cert .issuer{
-    color:#c084fc;
-}
-
-.cert small{
-    color:#aaa;
-}
-
-.cert a{
-    display:inline-block;
-    margin-top:18px;
-    color:#fff;
-    text-decoration:none;
-}
-
-/* EDUCATION */
-
-.education{
-    max-width:1000px;
-    margin:auto;
-}
-
-.edu{
-    display:flex;
-    gap:25px;
-    align-items:center;
-}
-
-.edu-icon{
-    width:70px;
-    height:70px;
-    border-radius:18px;
-    background:#8b5cf6;
-    display:grid;
-    place-items:center;
-    font-size:32px;
-    flex:none;
-}
-
-/* PROJECTS */
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.project{
-    transition:.4s;
-}
-
-.project:hover{
-    transform:translateY(-10px);
-    border-color:#a855f7;
-    box-shadow:0 0 35px rgba(168,85,247,.18);
-}
-
-.project h3{
-    color:#fff;
-    margin-bottom:8px;
-}
-
-.project p{
-    margin-bottom:15px;
-}
-
-.project .tech{
-    color:#c084fc;
-    font-family:monospace;
-}
-
-/* CONTACT */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:35px;
-    align-items:center;
-}
-
-.contact-links{
-    display:grid;
-    gap:15px;
-}
-
-.contact-item{
-    padding:20px 25px;
-    text-decoration:none;
-    color:white;
-}
-
-.contact-item strong{
-    display:block;
-    color:#c084fc;
-    font-size:12px;
-    letter-spacing:2px;
-}
-
-footer{
-    text-align:center;
-    padding:35px;
-    color:#77758b;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* ANIMATION */
-
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.show{
-    opacity:1;
-    transform:none;
-}
-
-.delay1{
-    transition-delay:.15s;
-}
-
-.delay2{
-    transition-delay:.3s;
-}
-
-.delay3{
-    transition-delay:.45s;
-}
-
-/* MOBILE */
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#070812;--card:rgba(34,39,83,.72);--card2:rgba(50,48,110,.55);--text:#f7f7ff;--muted:#b8b7cc;--purple:#a855f7;--cyan:#22d3ee}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(circle at 20% 20%,rgba(168,85,247,.18),transparent 28%),radial-gradient(circle at 80% 45%,rgba(34,211,238,.10),transparent 25%);background-size:50px 50px,50px 50px,auto,auto}
+body:before,body:after{content:"";position:fixed;width:320px;height:320px;border-radius:50%;filter:blur(100px);opacity:.16;z-index:-1;animation:float 8s ease-in-out infinite}
+body:before{background:#8b5cf6;top:15%;left:-150px}
+body:after{background:#06b6d4;right:-150px;bottom:10%;animation-delay:2s}
+@keyframes float{50%{transform:translateY(-35px) scale(1.1)}}
+
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(7,8,18,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{font-size:25px;font-weight:800;color:var(--cyan);text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:#fff;text-decoration:none;font-weight:600;transition:.3s}
+nav a:hover{color:var(--cyan);text-shadow:0 0 15px var(--cyan)}
+
+section{padding:105px 8%;min-height:80vh}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;width:100%}
+.badge,.eyebrow{display:inline-block;color:#c084fc;letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:800;margin-bottom:18px}
+.hero h1{font-size:clamp(48px,8vw,105px);line-height:.95;letter-spacing:-5px;margin-bottom:22px}
+.hero h1 span{color:#a855f7;text-shadow:0 0 25px rgba(168,85,247,.5);animation:pulseText 3s ease-in-out infinite}
+@keyframes pulseText{50%{text-shadow:0 0 45px rgba(168,85,247,.85)}}
+.hero h3{color:#c084fc;font-family:monospace;font-size:20px;margin-bottom:20px}
+.hero p{color:var(--muted);max-width:680px;font-size:17px}
+.buttons{display:flex;gap:15px;margin:30px 0;flex-wrap:wrap}
+.btn{padding:13px 22px;border-radius:10px;text-decoration:none;color:white;border:1px solid rgba(255,255,255,.15);transition:.3s;display:inline-block}
+.btn.primary{background:linear-gradient(135deg,#9333ea,#7c3aed);box-shadow:0 0 25px rgba(147,51,234,.35)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(168,85,247,.25)}
+.stats{display:flex;gap:55px;margin-top:30px}
+.stat strong{display:block;color:#c084fc;font-size:31px}
+.stat small{color:#77758b}
+
+.profile-wrap{text-align:center}
+.profile-photo{width:280px;height:280px;object-fit:cover;border-radius:50%;border:5px solid #22d3ee;box-shadow:0 0 20px #22d3ee,0 0 65px rgba(168,85,247,.65);animation:photoGlow 3s ease-in-out infinite}
+@keyframes photoGlow{50%{transform:translateY(-8px);box-shadow:0 0 35px #22d3ee,0 0 90px rgba(168,85,247,.75)}}
+
+.title{font-size:clamp(40px,6vw,70px);letter-spacing:-3px;margin-bottom:40px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+.about-text p{color:var(--muted);font-size:17px;margin-bottom:22px}
+.info-card,.card{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid rgba(180,170,255,.25);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.25);backdrop-filter:blur(12px)}
+.info-card{padding:25px}
+.info-row{padding:16px 5px;border-bottom:1px solid rgba(255,255,255,.12);display:flex;gap:14px}
+.info-row:last-child{border-bottom:0}
+.icon{font-size:22px;width:35px}
+
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{padding:18px;text-align:center;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,.12);transition:.35s}
+.skill:hover{transform:translateY(-7px);border-color:#a855f7;box-shadow:0 0 25px rgba(168,85,247,.25)}
+
+.timeline{position:relative;max-width:1050px;margin:auto}
+.timeline:before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(#a855f7,#22d3ee)}
+.experience{position:relative;padding-left:65px;margin-bottom:35px}
+.dot{position:absolute;left:8px;top:20px;width:22px;height:22px;border-radius:50%;background:#a855f7;box-shadow:0 0 20px #a855f7}
+.card{padding:28px}
+.card h3{font-size:23px}
+.meta{color:#c084fc;font-family:monospace;margin:6px 0 18px}
+.card p,.card li{color:var(--muted)}
+.card ul{padding-left:20px}
+
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cert{position:relative;min-height:245px;transition:.4s}
+.cert:hover{transform:translateY(-8px);border-color:#a855f7;box-shadow:0 0 30px rgba(168,85,247,.2)}
+.cert-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.cert-logo{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,#8b5cf6,#22d3ee)}
+.tag{font-size:11px;color:#e9d5ff;background:rgba(168,85,247,.2);padding:5px 10px;border-radius:20px}
+.cert h3{font-size:20px;margin-bottom:10px}
+.cert .issuer{color:#c084fc}
+.cert small{color:#aaa}
+.cert a{display:inline-block;margin-top:18px;color:#fff;text-decoration:none}
+
+.education{max-width:1000px;margin:auto}
+.edu{display:flex;gap:25px;align-items:center}
+.edu-icon{width:70px;height:70px;border-radius:18px;background:#8b5cf6;display:grid;place-items:center;font-size:32px;flex:none}
+
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.project{transition:.4s}
+.project:hover{transform:translateY(-10px);border-color:#a855f7;box-shadow:0 0 35px rgba(168,85,247,.18)}
+.project h3{color:#fff;margin-bottom:8px}
+.project p{margin-bottom:15px}
+.project .tech{color:#c084fc;font-family:monospace}
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}
+.contact-links{display:grid;gap:15px}
+.contact-item{padding:20px 25px;text-decoration:none;color:white;overflow-wrap:anywhere}
+.contact-item strong{display:block;color:#c084fc;font-size:12px;letter-spacing:2px}
+footer{text-align:center;padding:35px;color:#77758b;border-top:1px solid rgba(255,255,255,.08)}
+
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+.delay1{transition-delay:.15s}
+.delay2{transition-delay:.3s}
+.delay3{transition-delay:.45s}
 
 @media(max-width:900px){
-
-    nav ul{
-        gap:12px;
-        font-size:13px;
-    }
-
-    .hero-grid,
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .profile-wrap{
-        order:-1;
-    }
-
-    .skills{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .cert-grid,
-    .project-grid{
-        grid-template-columns:1fr;
-    }
+nav ul{gap:12px;font-size:13px}
+.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+.profile-wrap{order:-1}
+.skills{grid-template-columns:repeat(2,1fr)}
+.cert-grid,.project-grid{grid-template-columns:1fr}
 }
-
 @media(max-width:600px){
-
-    nav{
-        padding:15px 4%;
-    }
-
-    nav ul{
-        display:none;
-    }
-
-    section{
-        padding:85px 5%;
-    }
-
-    .hero h1{
-        font-size:52px;
-        letter-spacing:-3px;
-    }
-
-    .stats{
-        gap:22px;
-    }
-
-    .profile-photo{
-        width:210px;
-        height:210px;
-    }
+nav{padding:15px 4%}
+nav ul{display:none}
+section{padding:85px 5%}
+.hero h1{font-size:52px;letter-spacing:-3px}
+.hero h3{font-size:16px}
+.stats{gap:22px;flex-wrap:wrap}
+.profile-photo{width:210px;height:210px}
+.experience{padding-left:48px}
+.card{padding:22px}
+.edu{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
 <nav>
-
-<a href="#home" class="logo">
-Vidhyadhar
-</a>
-
+<a href="#home" class="logo">Vidhyadhar</a>
 <ul>
-
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -635,677 +133,232 @@ Vidhyadhar
 <li><a href="#education">Education</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </nav>
 
-
-<!-- HOME -->
-
 <section id="home" class="hero">
-
 <div class="hero-grid">
-
 <div class="reveal">
-
-<span class="badge">
-Available for opportunities
-</span>
-
-<h1>
-BATTULA<br>
-<span>VIDHYADHAR</span>
-</h1>
-
-<h3>
-// AI & Data Science Student · Python Developer · AI/ML Enthusiast
-</h3>
-
-<p>
-B.Tech student passionate about Artificial Intelligence,
-Machine Learning, Data Science, IoT and software development.
-I enjoy building practical technology solutions for real-world problems.
-</p>
-
+<span class="badge">Available for opportunities</span>
+<h1>BATTULA<br><span>VIDHYADHAR</span></h1>
+<h3>// AI &amp; Data Science Student · Python Developer · AI/ML Enthusiast</h3>
+<p>B.Tech student passionate about Artificial Intelligence, Machine Learning, Data Science, IoT and software development. I enjoy building practical technology solutions for real-world problems.</p>
 <div class="buttons">
-
-<a class="btn primary" href="#projects">
-View Projects ↓
-</a>
-
-<a class="btn" href="#contact">
-Get In Touch
-</a>
-
+<a class="btn primary" href="#projects">View Projects ↓</a>
+<a class="btn" href="#contact">Get In Touch</a>
 </div>
-
 <div class="stats">
-
-<div class="stat">
-<strong>2+</strong>
-<small>Internships</small>
+<div class="stat"><strong>2+</strong><small>Internships</small></div>
+<div class="stat"><strong>AI/ML</strong><small>Core Focus</small></div>
+<div class="stat"><strong>B.Tech</strong><small>2027</small></div>
 </div>
-
-<div class="stat">
-<strong>AI/ML</strong>
-<small>Core Focus</small>
 </div>
-
-<div class="stat">
-<strong>B.Tech</strong>
-<small>2027</small>
-</div>
-
-</div>
-
-</div>
-
 <div class="profile-wrap reveal delay2">
-
-<img
-src="profile.jpeg"
-alt="BATTULA VIDHYADHAR"
-class="profile-photo">
-
+<img src="profile.jpeg" alt="BATTULA VIDHYADHAR" class="profile-photo">
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ABOUT -->
 
 <section id="about">
-
-<span class="eyebrow reveal">
-Introduction
-</span>
-
-<h2 class="title reveal">
-About Me
-</h2>
-
+<span class="eyebrow reveal">Introduction</span>
+<h2 class="title reveal">About Me</h2>
 <div class="about-grid">
-
 <div class="about-text reveal">
-
-<p>
-I am <b>BATTULA VIDHYADHAR</b>, currently pursuing a Bachelor
-of Technology in Artificial Intelligence and Data Science at
-QIS College of Engineering and Technology, with an expected
-graduation year of 2027.
-</p>
-
-<p>
-I am interested in Artificial Intelligence, Machine Learning,
-Data Science, IoT and software development. I enjoy learning
-new technologies and developing innovative projects that can
-solve practical problems.
-</p>
-
-<p>
-I am continuously improving my technical and problem-solving
-skills through projects, internships and certifications.
-</p>
-
+<p>I am <b>BATTULA VIDHYADHAR</b>, currently pursuing a Bachelor of Technology in Artificial Intelligence and Data Science at QIS College of Engineering and Technology, with an expected graduation year of 2027.</p>
+<p>I am interested in Artificial Intelligence, Machine Learning, Data Science, IoT and software development. I enjoy learning new technologies and developing innovative projects that can solve practical problems.</p>
+<p>I am continuously improving my technical and problem-solving skills through projects, internships and certifications.</p>
 </div>
-
 <div class="info-card reveal delay2">
-
-<div class="info-row">
-<span class="icon">📍</span>
-<span>QIS College of Engineering & Technology</span>
+<div class="info-row"><span class="icon">📍</span><span>QIS College of Engineering &amp; Technology</span></div>
+<div class="info-row"><span class="icon">🎓</span><span>B.Tech — AI &amp; Data Science</span></div>
+<div class="info-row"><span class="icon">📅</span><span>Expected Graduation: 2027</span></div>
+<div class="info-row"><span class="icon">💻</span><span>AI · ML · Data Science · IoT</span></div>
+<div class="info-row"><span class="icon">🐙</span><span>GitHub Portfolio</span></div>
 </div>
-
-<div class="info-row">
-<span class="icon">🎓</span>
-<span>B.Tech — AI & Data Science</span>
 </div>
-
-<div class="info-row">
-<span class="icon">📅</span>
-<span>Expected Graduation: 2027</span>
-</div>
-
-<div class="info-row">
-<span class="icon">💻</span>
-<span>AI · ML · Data Science · IoT</span>
-</div>
-
-<div class="info-row">
-<span class="icon">🐙</span>
-<span>GitHub Portfolio</span>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- TECHNICAL SKILLS -->
-
 <section id="skills">
-
-<span class="eyebrow reveal">
-Tech Stack
-</span>
-
-<h2 class="title reveal">
-Technical Skills
-</h2>
-
+<span class="eyebrow reveal">Tech Stack</span>
+<h2 class="title reveal">Technical Skills</h2>
 <div class="skills">
-
 <div class="skill reveal">C</div>
 <div class="skill reveal delay1">Python</div>
 <div class="skill reveal delay2">Java</div>
 <div class="skill reveal delay3">SQL</div>
-
 <div class="skill reveal">HTML</div>
 <div class="skill reveal delay1">CSS</div>
 <div class="skill reveal delay2">Git</div>
 <div class="skill reveal delay3">GitHub</div>
-
 <div class="skill reveal">NumPy</div>
 <div class="skill reveal delay1">Pandas</div>
-
 </div>
-
 </section>
-
-
-<!-- EXPERIENCE -->
 
 <section id="experience">
-
-<span class="eyebrow reveal">
-Career
-</span>
-
-<h2 class="title reveal">
-Experience
-</h2>
-
+<span class="eyebrow reveal">Career</span>
+<h2 class="title reveal">Experience</h2>
 <div class="timeline">
 
-
-<!-- JAVA FULL STACK -->
-
 <div class="experience reveal">
-
 <span class="dot"></span>
-
 <div class="card">
-
-<h3>
-Java Full Stack Development Internship
-</h3>
-
-<div class="meta">
-Internship / Training
+<h3>Data Analyst Internship — Averixis Solutions Pvt. Ltd.</h3>
+<div class="meta">Data Analyst Internship</div>
+<p>Completed the Data Analyst internship program at Averixis Solutions Pvt. Ltd.</p>
+<a class="btn" href="#certificates">View Certificate ↗</a>
+</div>
 </div>
 
-<p>
-Completed a Java Full Stack Development internship and gained
-practical exposure to Java-based application development and
-full-stack development concepts.
-</p>
-
-<a class="btn" href="#certificates">
-View Certificate ↗
-</a>
-
+<div class="experience reveal delay1">
+<span class="dot"></span>
+<div class="card">
+<h3>Java Full Stack Development Internship</h3>
+<div class="meta">Internship / Training</div>
+<p>Completed a Java Full Stack Development internship and gained practical exposure to Java-based application development and full-stack development concepts.</p>
+<a class="btn" href="#certificates">View Certificate ↗</a>
 </div>
-
 </div>
-
-
-<!-- ANDROID DEVELOPER -->
 
 <div class="experience reveal delay2">
-
 <span class="dot"></span>
-
 <div class="card">
-
-<h3>
-Android Developer Virtual Internship
-</h3>
-
-<div class="meta">
-Virtual Internship
+<h3>Android Developer Virtual Internship</h3>
+<div class="meta">Virtual Internship</div>
+<p>Completed an Android Developer Virtual Internship and gained practical exposure to Android application development and mobile application technologies.</p>
+<a class="btn" href="#certificates">View Certificate ↗</a>
 </div>
-
-<p>
-Completed an Android Developer Virtual Internship and gained
-practical exposure to Android application development and
-mobile application technologies.
-</p>
-
-<a class="btn" href="#certificates">
-View Certificate ↗
-</a>
-
 </div>
 
 </div>
-
-</div>
-
 </section>
-
-
-<!-- CERTIFICATES -->
 
 <section id="certificates">
-
-<span class="eyebrow reveal">
-Credentials
-</span>
-
-<h2 class="title reveal">
-Certifications
-</h2>
-
+<span class="eyebrow reveal">Credentials</span>
+<h2 class="title reveal">Certifications</h2>
 <div class="cert-grid">
 
-
-<!-- JAVA FULL STACK -->
-
 <div class="card cert reveal">
-
 <div class="cert-top">
-
-<div class="cert-logo">
-☕
+<div class="cert-logo">📊</div>
+<span class="tag">TRAINING</span>
 </div>
-
-<span class="tag">
-INTERNSHIP
-</span>
-
+<h3>Data Analyst Training Certificate</h3>
+<div class="issuer">Averixis Solutions Pvt. Ltd.</div>
+<small>April 8 – June 8, 2026</small>
 </div>
-
-<h3>
-Java Full Stack Development
-</h3>
-
-<div class="issuer">
-Java Full Stack Development
-</div>
-
-<small>
-Internship / Training Certificate
-</small>
-
-</div>
-
-
-<!-- ANDROID -->
 
 <div class="card cert reveal delay1">
-
 <div class="cert-top">
-
-<div class="cert-logo">
-📱
+<div class="cert-logo">📈</div>
+<span class="tag">INTERNSHIP</span>
 </div>
-
-<span class="tag">
-INTERNSHIP
-</span>
-
+<h3>Data Analyst Internship</h3>
+<div class="issuer">Averixis Solutions Pvt. Ltd.</div>
+<small>Certificate ID: AVX-2026-2830 · October 10, 2026</small>
 </div>
-
-<h3>
-Android Developer Virtual Internship
-</h3>
-
-<div class="issuer">
-Android Development
-</div>
-
-<small>
-Virtual Internship Certificate
-</small>
-
-</div>
-
-
-<!-- IBM PYTHON -->
 
 <div class="card cert reveal delay2">
-
 <div class="cert-top">
-
-<div class="cert-logo">
-🐍
+<div class="cert-logo">☕</div>
+<span class="tag">INTERNSHIP</span>
 </div>
-
-<span class="tag">
-CERTIFICATE
-</span>
-
+<h3>Java Full Stack Development</h3>
+<div class="issuer">Java Full Stack Development</div>
+<small>Internship / Training Certificate</small>
 </div>
-
-<h3>
-IBM Python Certificate
-</h3>
-
-<div class="issuer">
-IBM
-</div>
-
-<small>
-Python / Programming
-</small>
-
-</div>
-
-
-<!-- DELOITTE -->
 
 <div class="card cert reveal">
-
 <div class="cert-top">
-
-<div class="cert-logo">
-🛡️
+<div class="cert-logo">📱</div>
+<span class="tag">INTERNSHIP</span>
+</div>
+<h3>Android Developer Virtual Internship</h3>
+<div class="issuer">Android Development</div>
+<small>Virtual Internship Certificate</small>
 </div>
 
-<span class="tag">
-CERTIFICATE
-</span>
-
 </div>
-
-<h3>
-Deloitte Cyber Job Simulation
-</h3>
-
-<div class="issuer">
-Deloitte
-</div>
-
-<small>
-Cybersecurity Job Simulation
-</small>
-
-</div>
-
-
-</div>
-
 </section>
-
-
-<!-- EDUCATION -->
 
 <section id="education">
-
-<span class="eyebrow reveal">
-Academic
-</span>
-
-<h2 class="title reveal">
-Education
-</h2>
-
+<span class="eyebrow reveal">Academic</span>
+<h2 class="title reveal">Education</h2>
 <div class="education">
-
 <div class="card edu reveal">
-
-<div class="edu-icon">
-🎓
-</div>
-
+<div class="edu-icon">🎓</div>
 <div>
-
-<h3>
-Bachelor of Technology (B.Tech)
-</h3>
-
-<div class="issuer">
-QIS College of Engineering & Technology
+<h3>Bachelor of Technology (B.Tech)</h3>
+<div class="issuer">QIS College of Engineering &amp; Technology</div>
+<p>Artificial Intelligence &amp; Data Science · Expected Graduation: 2027</p>
 </div>
-
-<p>
-Artificial Intelligence & Data Science · Expected Graduation: 2027
-</p>
-
 </div>
-
 </div>
-
-</div>
-
 </section>
-
-
-<!-- PROJECTS -->
 
 <section id="projects">
-
-<span class="eyebrow reveal">
-Selected Work
-</span>
-
-<h2 class="title reveal">
-Projects
-</h2>
-
+<span class="eyebrow reveal">Selected Work</span>
+<h2 class="title reveal">Projects</h2>
 <div class="project-grid">
 
-
 <div class="card project reveal">
-
-<h3>
-🤖 AI-Based EV Emergency Assistance & Intelligent Rescue System
-</h3>
-
-<p>
-A smart safety solution designed to provide rapid assistance
-during EV emergencies by monitoring vehicle conditions,
-detecting emergency situations and providing location
-and emergency information.
-</p>
-
-<div class="tech">
-AI · IoT · Flutter · Firebase · GPS
+<h3>🤖 AI-Based EV Emergency Assistance &amp; Intelligent Rescue System</h3>
+<p>A smart safety solution designed to provide rapid assistance during EV emergencies by monitoring vehicle conditions, detecting emergency situations and providing location and emergency information.</p>
+<div class="tech">AI · IoT · GPS · Emergency Assistance</div>
 </div>
-
-</div>
-
 
 <div class="card project reveal delay1">
-
-<h3>
-♻️ Waste-to-Energy Project
-</h3>
-
-<p>
-A project focused on converting waste into useful energy
-while promoting sustainable waste management and reducing
-environmental impact.
-</p>
-
-<div class="tech">
-Waste Management · Energy · Sustainability
+<h3>♻️ Waste-to-Energy Project</h3>
+<p>A project focused on converting waste into useful energy while promoting sustainable waste management and reducing environmental impact.</p>
+<div class="tech">Waste Management · Energy · Sustainability</div>
 </div>
-
-</div>
-
 
 <div class="card project reveal delay2">
-
-<h3>
-🚦 IoT-Based Smart Traffic Management System
-</h3>
-
-<p>
-An IoT-based smart traffic management project designed
-to monitor traffic conditions and support efficient
-traffic management using sensors and connected systems.
-</p>
-
-<div class="tech">
-IoT · Sensors · Arduino · Automation
+<h3>🚦 IoT-Based Smart Traffic Management System</h3>
+<p>An IoT-based smart traffic management project designed to monitor traffic conditions and support efficient traffic management using sensors and connected systems.</p>
+<div class="tech">IoT · Sensors · Traffic Management</div>
 </div>
-
-</div>
-
 
 <div class="card project reveal delay3">
-
-<h3>
-♿ Automatic Wheelchair with Voice Control
-</h3>
-
-<p>
-A smart wheelchair project designed to use voice commands
-to assist users in controlling wheelchair movement and
-improving independent mobility.
-</p>
-
-<div class="tech">
-Voice Control · IoT · Embedded Systems
+<h3>♿ Automatic Wheelchair with Voice Control</h3>
+<p>A smart wheelchair project designed to use voice commands to assist users in controlling wheelchair movement and improving independent mobility.</p>
+<div class="tech">Voice Control · IoT · Embedded Systems</div>
 </div>
 
 </div>
-
-
-</div>
-
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
-
-<span class="eyebrow reveal">
-Let's Talk
-</span>
-
-<h2 class="title reveal">
-Get In Touch
-</h2>
-
+<span class="eyebrow reveal">Let's Talk</span>
+<h2 class="title reveal">Get In Touch</h2>
 <div class="contact-grid">
-
 <div class="reveal">
-
-<p style="color:var(--muted);font-size:18px">
-
-I'm open to internships, placement opportunities,
-collaborations, and conversations about AI,
-Data Science and technology.
-
-</p>
-
+<p style="color:var(--muted);font-size:18px">I'm open to internships, placement opportunities, collaborations, and conversations about AI, Data Science and technology.</p>
 <div class="buttons">
-
-<a
-class="btn primary"
-href="mailto:vidhyadharbattula5@gmail.com">
-
-Send an Email ↗
-
-</a>
-
+<a class="btn primary" href="mailto:vidhyadharbattula5@gmail.com">Send an Email ↗</a>
 </div>
-
 </div>
-
-
 <div class="contact-links">
-
-<a
-class="card contact-item reveal"
-href="mailto:vidhyadharbattula5@gmail.com">
-
-<strong>
-EMAIL
-</strong>
-
-vidhyadharbattula5@gmail.com
-
-</a>
-
-
-<a
-class="card contact-item reveal delay1"
-href="https://www.linkedin.com/in/vidhyadhar-battula-40a018376"
-target="_blank">
-
-<strong>
-LINKEDIN
-</strong>
-
-BATTULA VIDHYADHAR
-
-</a>
-
-
-<a
-class="card contact-item reveal delay2"
-href="https://vidhyadhar5493.github.io"
-target="_blank">
-
-<strong>
-PORTFOLIO
-</strong>
-
-vidhyadhar5493.github.io
-
-</a>
-
+<a class="card contact-item reveal" href="mailto:vidhyadharbattula5@gmail.com"><strong>EMAIL</strong>vidhyadharbattula5@gmail.com</a>
+<a class="card contact-item reveal delay1" href="https://www.linkedin.com/in/vidhyadhar-battula-40a018376" target="_blank" rel="noopener noreferrer"><strong>LINKEDIN</strong>BATTULA VIDHYADHAR</a>
+<a class="card contact-item reveal delay2" href="https://vidhyadhar5493.github.io" target="_blank" rel="noopener noreferrer"><strong>PORTFOLIO</strong>vidhyadhar5493.github.io</a>
 </div>
-
 </div>
-
 </section>
 
-
-<footer>
-
-Designed & Built by
-<b>BATTULA VIDHYADHAR</b>
-· © 2026
-
-</footer>
-
+<footer>Designed &amp; Built by <b>BATTULA VIDHYADHAR</b> · © 2026</footer>
 
 <script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {threshold: 0.12});
 
-const observer =
-new IntersectionObserver(
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-},
-{
-threshold:.12
-}
-);
-
-document
-.querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
-
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 
 </body>
